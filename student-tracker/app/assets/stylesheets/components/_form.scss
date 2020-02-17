@@ -1,0 +1,18 @@
+@import '../settings/variables';
+
+.form-container {
+  margin: 0 auto;
+  max-width: $x-small-break;
+
+  h2 {
+    text-align: center;
+  }
+
+  #new_user {
+   .field {
+     input {
+       width: 30em;
+     }
+   } 
+  }
+}
