@@ -1,0 +1,28 @@
+@import '../settings/variables';
+
+.navbar {
+  background-color: $color-base;
+  color: $color-font-highlight;
+
+  a {
+    color: $color-font-highlight;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $color-highlight;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline;
+      padding: 1em;
+    }
+  }
+}
