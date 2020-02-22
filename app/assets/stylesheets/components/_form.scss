@@ -8,7 +8,7 @@
     text-align: center;
   }
 
-  #new_user {
+  form {
     .field {
       input {
         font-size: 1em;
@@ -20,22 +20,5 @@
 
   .checkbox {
     width: 1em !important;
-  }
-
-  .submit-button {
-    border: 2px solid $color-highlight;
-    color: $color-highlight;
-    font-size: 1em;
-  }
-
-  .submit-button:hover {
-    background-color: $color-base;
-    border: 2px solid $color-base;
-    color: $color-font-highlight;
-  }
-
-  .sign-in-redirect {
-    margin: 1em 0;
-    text-align: center;
   }
 }
