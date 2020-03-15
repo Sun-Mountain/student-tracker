@@ -2,7 +2,7 @@ class TitlesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @titles = Title.all.order('class_title ASC')
+    @titles = current_user.titles.all.order('class_title ASC')
   end
 
   def new
@@ -10,7 +10,7 @@ class TitlesController < ApplicationController
   end
 
   def create
-    @title = Title.new(title_params)
+    @title = Title.new(title_params.merge(user_id: current_user.id))
 
     if @title.save
       redirect_to root_path

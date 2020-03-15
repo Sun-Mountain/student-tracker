@@ -1,4 +1,6 @@
 class Title < ApplicationRecord
-  validates :class_title, uniqueness: true, presence: true
+  belongs_to :user
+
+  validates :class_title, presence: true
 
 end
