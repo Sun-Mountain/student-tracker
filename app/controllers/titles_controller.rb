@@ -12,7 +12,7 @@ class TitlesController < ApplicationController
     @title = Title.new(title_params)
 
     if @title.save
-      redirect_to @title
+      redirect_to root_path
     else
       render 'new'
     end
