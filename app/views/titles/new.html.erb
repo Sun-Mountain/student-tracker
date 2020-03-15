@@ -1,0 +1,11 @@
+<h2>New Class</h1>
+
+<div>
+  <%= form_for @title do |f| %>
+    <div>
+      <%= f.label :class_title, 'Class Name' %><br />
+      <%= f.text_field :class_title %><br />
+      <%= f.submit 'Create Class', autofocus: true %>
+    </div>
+  <% end %>
+</div>
