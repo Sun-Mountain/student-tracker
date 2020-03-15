@@ -1,11 +1,17 @@
-<h1>Classes</h1>
+<h1>Welcome!</h1>
 
-<div>
-  <ul>
-    <% @titles.each do |title| %>
-      <li>
-        <%= link_to title.class_title, title %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<% if user_signed_in? %>
+  <h2>Classes</h2>
+
+  <div>
+    <ul>
+      <% @titles.each do |title| %>
+        <li>
+          <%= link_to title.class_title, title %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+Sign in to get started!
+<% end %>
