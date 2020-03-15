@@ -36,6 +36,13 @@ class TitlesController < ApplicationController
     @title = Title.find(params[:id])
   end
 
+  def destroy
+    @title = Title.find(params[:id])
+    @title.destroy
+    
+    redirect_to titles_path
+  end
+
   private
 
   def title_params
