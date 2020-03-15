@@ -1,4 +1,5 @@
 class TitlesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @titles = Title.all.order('class_title ASC')
