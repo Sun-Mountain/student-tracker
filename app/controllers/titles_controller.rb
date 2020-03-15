@@ -1,6 +1,7 @@
 class TitlesController < ApplicationController
 
   def index
+    @titles = Title.all.order('class_title ASC')
   end
 
   def new
@@ -18,6 +19,20 @@ class TitlesController < ApplicationController
   end
 
   def show
+    @title = Title.find(params[:id])
+  end
+
+  def update
+    @title = Title.find(params[:id])
+
+    if @title.update(title_params)
+      redirect_to @title
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
     @title = Title.find(params[:id])
   end
 

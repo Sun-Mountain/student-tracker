@@ -1,1 +1,11 @@
 <h1>Classes</h1>
+
+<div>
+  <ul>
+    <% @titles.each do |title| %>
+      <li>
+        <%= link_to title.class_title, title %>
+      </li>
+    <% end %>
+  </ul>
+</div>
