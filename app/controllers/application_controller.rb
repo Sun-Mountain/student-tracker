@@ -17,4 +17,12 @@ class ApplicationController < ActionController::Base
       )
     end
   end
+
+  private
+
+  def owner?(object)
+    unless current_user == object.user
+      redirect_back fallback_location: root_path, notice: 'User is not owner'
+    end
+  end
 end

@@ -21,7 +21,7 @@ class TitlesController < ApplicationController
   end
 
   def show
-    owner?
+    owner?(@title)
   end
 
   def update
@@ -33,7 +33,7 @@ class TitlesController < ApplicationController
   end
 
   def edit
-    owner?
+    owner?(@title)
   end
 
   def destroy
@@ -43,12 +43,6 @@ class TitlesController < ApplicationController
   end
 
   private
-
-  def owner?
-    unless current_user == @title.user
-      redirect_back fallback_location: root_path, notice: 'User is not owner'
-    end
-  end
 
   def set_title
     @title = Title.find(params[:id])
