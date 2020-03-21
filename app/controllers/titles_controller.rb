@@ -21,6 +21,7 @@ class TitlesController < ApplicationController
   end
 
   def show
+    owner?
   end
 
   def update
@@ -32,6 +33,7 @@ class TitlesController < ApplicationController
   end
 
   def edit
+    owner?
   end
 
   def destroy
@@ -42,12 +44,18 @@ class TitlesController < ApplicationController
 
   private
 
-  def title_params
-    params.require(:title).permit(:class_title)
+  def owner?
+    unless current_user == @title.user
+      redirect_back fallback_location: root_path, notice: 'User is not owner'
+    end
   end
 
   def set_title
     @title = Title.find(params[:id])
+  end
+
+  def title_params
+    params.require(:title).permit(:class_title)
   end
 
 end
