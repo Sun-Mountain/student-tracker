@@ -1,24 +1,40 @@
-# README
+# Student Tracker (working title)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Conceptually**, this app is used to track students and the classes/sessions they've taken over the course of time.
 
-Things you may want to cover:
+**Practically**, this app is used as a personal exercise to practice building and maintaining a Ruby on Rails application.
 
-* Ruby version
+## The Stack
 
-* System dependencies
+**Build**
+* Ruby -v 2.6.3
+* Rails -v 6.0.2.2
+* PostgreSQL
 
-* Configuration
+**System Dependencies**
+* RSpec
+* SASS/SCSS
 
-* Database creation
+## App Set Up
 
-* Database initialization
+To run the app locally, make sure you have [PostgreSQL](https://postgresapp.com/) installed.
 
-* How to run the test suite
+Alternatively:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+brew install postgresql
+```
 
-* Deployment instructions
+**Installation and Configuration**
 
-* ...
+For SSH:
+
+```SSH
+git@github.com:Sun-Mountain/student-tracker.git
+```
+
+For HTTPS:
+
+```HTTP
+https://github.com/Sun-Mountain/student-tracker.git
+```
