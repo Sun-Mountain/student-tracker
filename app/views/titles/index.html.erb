@@ -2,7 +2,7 @@
 
 <% if user_signed_in? %>
   <h2>Classes</h2>
-  <% if Title.first.present? %>
+  <% if @titles.present? %>
     <div>
       <ul>
         <% @titles.each do |title| %>
