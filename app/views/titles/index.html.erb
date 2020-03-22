@@ -1,0 +1,27 @@
+<h1>Welcome!</h1>
+
+<% if user_signed_in? %>
+  <h2>Classes</h2>
+  <% if @titles.present? %>
+    <div>
+      <ul>
+        <% @titles.each do |title| %>
+          <li>
+            <%= link_to title.class_title, title %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% else %>
+    Create your first class!
+  <% end %>
+  <%= form_for Title.new do |f| %>
+    <div>
+      <%= f.label :class_title, 'Class Name' %><br />
+      <%= f.text_field :class_title %><br />
+      <%= f.submit %>
+    </div>
+  <% end %>
+<% else %>
+Sign in to get started!
+<% end %>
