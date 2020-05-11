@@ -1,0 +1,18 @@
+<h1>Welcome!</h1>
+
+<% if user_signed_in? %>
+  <h2>Classes</h2>
+  <% if @sessions.present? %>
+    <div>
+      <ul>
+        <% @sessions.each do |session| %>
+          <li>
+            <%= link_to session.session_name, session %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% else %>
+Sign in to get started!
+<% end %>

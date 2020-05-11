@@ -1,3 +1,27 @@
 <h1><%= @title.class_title %></h1>
 <%= link_to 'Edit', edit_title_path(@title) %>
 <%= link_to 'Delete', title_path(@title), method: :delete %>
+
+<% if @title.sessions.size > 0 %>
+  <h2>Sessions</h2>
+
+  <ul>
+    <% @title.sessions.each do |sesh| %>
+      <li>
+        <div>
+          <%= sesh.session_name %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for Session.new  do |f| %>
+  <%= f.label :session_name, 'Session Name' %><br />
+  <%= f.text_field :session_name %><br />
+  <%= f.label :start_date, 'Start Date' %><br />
+  <%= f.date_select :start_date %><br />
+  <%= f.label :end_date, 'End Date' %><br />
+  <%= f.date_select :end_date %><br />
+  <%= f.submit %>
+<% end %>

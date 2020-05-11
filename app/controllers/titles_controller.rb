@@ -44,12 +44,18 @@ class TitlesController < ApplicationController
 
   private
 
+  def owner?(object)
+    unless current_user == object.user
+      redirect_back fallback_location: root_path, notice: 'User is not owner'
+    end
+  end
+
   def set_title
     @title = Title.find(params[:id])
   end
 
   def title_params
-    params.require(:title).permit(:class_title)
+    params.require(:title).permit(:class_title, session_id: [])
   end
 
 end

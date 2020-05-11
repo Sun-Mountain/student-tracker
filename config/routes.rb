@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root 'titles#index'
 
   resources :titles
+  resources :sessions
 end
