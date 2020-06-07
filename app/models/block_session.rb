@@ -1,0 +1,2 @@
+class BlockSession < ApplicationRecord
+end

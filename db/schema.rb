@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_15_221841) do
+ActiveRecord::Schema.define(version: 2020_06_07_165522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "block_sessions", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rosters", force: :cascade do |t|
+    t.bigint "title_id", null: false
+    t.bigint "block_session_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["block_session_id"], name: "index_rosters_on_block_session_id"
+    t.index ["title_id"], name: "index_rosters_on_title_id"
+  end
 
   create_table "titles", force: :cascade do |t|
     t.string "class_title"
@@ -37,5 +54,7 @@ ActiveRecord::Schema.define(version: 2020_03_15_221841) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "rosters", "block_sessions"
+  add_foreign_key "rosters", "titles"
   add_foreign_key "titles", "users"
 end
