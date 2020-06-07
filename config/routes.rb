@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   root 'titles#index'
 
-  resources :titles
+  resources :block_sessions, :titles
 end
