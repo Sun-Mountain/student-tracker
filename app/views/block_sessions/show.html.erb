@@ -1,0 +1,7 @@
+<h1><%= @session.name %></h1>
+<b>Starts:</b> <%= @session.start_date %><br />
+<b>Ends:</b> <%= @session.end_date %><br /><br />
+
+
+<%= link_to 'Edit', edit_block_session_path(@session) %>
+<%= link_to 'Delete', block_session_path(@session), method: :delete %>
