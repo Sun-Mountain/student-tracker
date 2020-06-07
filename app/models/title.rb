@@ -5,4 +5,7 @@ class Title < ApplicationRecord
 
   validates :class_title, presence: true
 
+  def sessions?
+    rosters.count.zero?
+  end
 end
