@@ -19,12 +19,6 @@
 
 To run the app locally, make sure you have [PostgreSQL](https://postgresapp.com/) installed.
 
-Alternatively:
-
-```bash
-brew install postgresql
-```
-
 **Installation and Configuration**
 
 For SSH:
