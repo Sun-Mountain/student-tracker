@@ -5,11 +5,3 @@
 
 <%= link_to 'Edit', edit_block_session_path(@session) %>
 <%= link_to 'Delete', block_session_path(@session), method: :delete %>
-
-<section>
-  <% if @session.classes? %>
-    No classes assigned to this session.
-  <% else %>
-    <%= render 'roster_class_list' %>
-  <% end %>
-</section>
