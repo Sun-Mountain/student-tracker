@@ -1,0 +1,6 @@
+<h3>Sessions</h3>
+<ul>
+  <% @title.block_sessions.each do |session| %>
+    <li><%= link_to session.name, session %></li>
+  <% end %>
+</ul>

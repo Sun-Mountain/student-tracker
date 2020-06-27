@@ -1,0 +1,6 @@
+<h3>Classes</h3>
+<ul>
+  <% @session.titles.each do |title| %>
+    <li><%= link_to title.class_title, title %></li>
+  <% end %>
+</ul>
